@@ -127,3 +127,49 @@
 @media(max-width:475px){.hero h1{font-size:clamp(47px,12vw,62px)}.surprise-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.moments-panel{padding:14px 11px;border-radius:17px}.surprise-card{min-height:165px;padding:13px;transform:none}.surprise-symbol{font-size:30px;margin:13px 0 12px}.surprise-name{font-size:18px}.surprise-top{font-size:8px}.surprise-hint{font-size:9px}.moments-meta{margin:5px 4px 14px}.photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 11px}.photo-card{padding:6px 6px 0}.photo-caption{padding:9px 4px 12px}.photo-caption strong{font-size:17px}.photo-caption small{font-size:9px}.new-dialog{padding:35px 19px 29px}.new-close{right:9px;top:9px}.tiny-piece,.match-tile{min-width:49px;min-height:54px}.hearts-meeting{gap:100px}.rhythm-beat{min-width:30px;font-size:19px}.birthday-card{padding:40px 17px}.birthday-orb{width:105px;height:105px}.birthday-card h2{font-size:43px}.birthday-candles{gap:7px}.candle-button{min-width:46px;padding:9px}.hero-caption{letter-spacing:.09em}}
 /* Keep decorative orbital rings within the narrow mobile viewport. */
 @media(max-width:760px){.hero-art{overflow:hidden}}
+
+/* PERSONAL PHOTO EDITION — stronger depth, real photography, flexible gallery */
+.hero-art{isolation:isolate}
+.hero-polaroid{position:absolute;z-index:1;left:50%;top:47%;width:min(54%,280px);aspect-ratio:3/4;transform:translate(-50%,-50%) rotate(-5deg);padding:9px 9px 38px;border-radius:8px;background:#f4e9e4;box-shadow:0 24px 76px #080a16dd,0 0 75px #d1a7c047;animation:heroPhotoFloat 8s ease-in-out infinite;overflow:hidden}
+.hero-polaroid img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 26%;border-radius:3px;filter:saturate(.85) contrast(1.04)}
+.hero-polaroid figcaption{font:italic 12px var(--serif);position:absolute;bottom:11px;left:0;width:100%;text-align:center;color:#54485a}
+.hero-moon{opacity:.62;filter:blur(1.5px)}.hero-heart{display:none}
+@keyframes heroPhotoFloat{0%,100%{transform:translate(-50%,-50%) rotate(-5deg) translateY(0)}50%{transform:translate(-50%,-50%) rotate(-2deg) translateY(-11px)}}
+.photo-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:5px 0 22px}
+.photo-filters{display:flex;flex-wrap:wrap;gap:8px}
+.photo-filter,.photo-shuffle{min-height:42px;border:1px solid #e5cfe13b;border-radius:50px;padding:10px 15px;background:#ffffff09;color:#e8d8e7;cursor:pointer;font-size:11px;transition:background .2s,border-color .2s,transform .2s}
+.photo-filter.active,.photo-filter[aria-pressed=true]{background:#e5b5cd25;color:#ffe0ec;border-color:#e8b6d07c}
+.photo-filter:hover,.photo-shuffle:hover{background:#f2d5e41d;transform:translateY(-2px)}
+.photo-shuffle{color:#e8d4a9;white-space:nowrap}
+.photo-toolbar-sub{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 0 15px;font-size:10px;letter-spacing:.09em;color:#bba9be}
+.photo-grid{align-items:stretch}.photo-card{transition:transform .25s,box-shadow .25s}
+.photo-card.with-photo:nth-child(8n+2){transform:rotate(1deg)}
+.photo-card.with-photo:nth-child(8n+6){transform:rotate(-1.1deg)}
+.photo-card:hover{transform:rotate(0deg) translateY(-7px)!important;z-index:2}
+.photo-picture img{object-position:center 30%}
+.photo-lightbox-actions{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.photo-lightbox-actions .button{min-height:40px;padding:10px 13px;font-size:11px}
+.photo-dialog{max-width:min(600px,calc(100vw - 24px))}
+.photo-dialog .lightbox-frame{width:min(460px,100%);height:auto;max-height:58vh;aspect-ratio:3/4}
+.photo-dialog .lightbox-frame img{object-fit:contain}
+.dance-chapter{max-width:700px;margin:32px auto 25px;text-align:center}
+.dance-kicker{font-size:10px;letter-spacing:.23em;color:#efd29d;font-weight:700}
+.dance-stage-head h4{font:italic clamp(31px,5vw,47px)/1.13 var(--serif);color:#ffe4ef;margin:13px 0 14px}
+.dance-stage-head p{color:#d5c3d4;font-size:13px;line-height:1.8;max-width:440px;margin:0 auto 24px}
+.dance-cover{position:relative;max-width:270px;margin:0 auto 23px;transform:rotate(-3deg);border:9px solid #f9e9e6;border-bottom-width:34px;border-radius:7px;background:#ecdce2;box-shadow:0 20px 60px #0008}
+.dance-cover img{display:block;width:100%;max-height:350px;object-fit:cover;object-position:center 44%}
+.dance-cover figcaption{position:absolute;bottom:-26px;left:0;right:0;text-align:center;color:#5f5061;font:italic 14px var(--serif)}
+.dance-play{margin:4px auto 17px}
+.dance-slideshow{margin:23px auto 0;max-width:440px}
+.dance-slide-frame{position:relative;aspect-ratio:16/12;max-height:360px;border-radius:18px;overflow:hidden;background:#181428;border:1px solid #f7dbe850;box-shadow:0 20px 55px #05030ba0}
+.dance-slide-frame img{width:100%;height:100%;object-fit:contain;display:block;background:radial-gradient(circle at center,#3c2c48,#171426)}
+.dance-shimmer{position:absolute;top:14px;right:21px;color:#f8d7e2;font-size:24px;filter:drop-shadow(0 0 15px #f8cdda)}
+.dance-slide-caption{font:italic 19px/1.5 var(--serif);color:#f0dbe5;margin:14px auto 9px}
+.dance-controls{display:flex;justify-content:center;gap:9px;margin-bottom:20px}
+.dance-controls button{cursor:pointer;border:1px solid #f3d6e447;color:#ebdbe5;background:#ffffff10;padding:10px 16px;border-radius:9px;font-size:12px;min-height:44px}
+.dance-controls button:hover{background:#e8b6d02b}
+.song-card{max-width:560px;margin:17px auto 25px}
+.song-card audio{width:100%;max-width:100%;display:block}
+@media(max-width:760px){.hero-polaroid{width:min(50%,245px);top:46%}.hero-art{overflow:hidden}.floating-card{z-index:3}.photo-toolbar{gap:8px}.photo-shuffle{width:100%}.photo-filters{justify-content:center}.photo-filter{padding:8px 12px;font-size:10px;min-height:40px}.photo-toolbar-sub{justify-content:center;text-align:center}.dance-cover{max-width:230px}}
+@media(max-width:475px){.hero-polaroid{width:54%;padding:6px 6px 30px}.hero-polaroid figcaption{font-size:9px;bottom:10px}.floating-card-one{left:0;top:10%}.floating-card-two{right:0;top:11%}.floating-card-three{right:1%;bottom:2%}.photo-lightbox-actions .button{padding:10px 11px}.dance-stage-head h4{font-size:31px}.dance-slide-caption{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.hero-polaroid{animation:none}}

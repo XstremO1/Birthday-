@@ -41,3 +41,520 @@ window.LOVE_SITE = {
     ['A forever kind of picture','The best memories are still ahead of us.','♡']
   ]
 };
+
+
+// Curated, deliberately non-chronological photo album. Photo numbers are original upload IDs.
+window.LOVE_PHOTOS = [
+  {
+    "id": 42,
+    "src": "photos/photo-42.webp",
+    "category": "us",
+    "title": "A forever kind of hug",
+    "note": "If I could frame a feeling, it would look a little like this.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 64,
+    "src": "photos/photo-64.webp",
+    "category": "us",
+    "title": "A night I want to keep",
+    "note": "Some nights have a special glow just because we shared them.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 15,
+    "src": "photos/photo-15.webp",
+    "category": "us",
+    "title": "Unfiltered happiness",
+    "note": "My favourite pictures are the ones where we can’t stop smiling.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 35,
+    "src": "photos/photo-35.webp",
+    "category": "her",
+    "title": "Beautiful, just being you",
+    "note": "There is something so lovely about the way you are.",
+    "alt": "Portrait of her"
+  },
+  {
+    "id": 7,
+    "src": "photos/photo-07.webp",
+    "category": "us",
+    "title": "A page from our story",
+    "note": "Some photographs feel like little love letters.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 33,
+    "src": "photos/photo-33.webp",
+    "category": "us",
+    "title": "Caught in a happy moment",
+    "note": "I love the simple happiness behind these pictures.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 26,
+    "src": "photos/photo-26.webp",
+    "category": "her",
+    "title": "A little bit of sunshine",
+    "note": "Some photos don’t need a caption. They just make me smile.",
+    "alt": "Portrait of her"
+  },
+  {
+    "id": 39,
+    "src": "photos/photo-39.webp",
+    "category": "us",
+    "title": "The happiest little us",
+    "note": "I wish I could bottle how this moment felt.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 1,
+    "src": "photos/photo-01.webp",
+    "category": "us",
+    "title": "Look at us",
+    "note": "One little frame, a hundred reasons to smile.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 48,
+    "src": "photos/photo-48.webp",
+    "category": "details",
+    "title": "Your hand in mine",
+    "note": "Some memories need no faces at all.",
+    "alt": "A sweet personal memory"
+  },
+  {
+    "id": 12,
+    "src": "photos/photo-12.webp",
+    "category": "us",
+    "title": "The way we are",
+    "note": "No perfect pose needed. Just us.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 41,
+    "src": "photos/photo-41.webp",
+    "category": "her",
+    "title": "My favourite smile",
+    "note": "You might not realise it, but your smile makes my world brighter.",
+    "alt": "Portrait of her"
+  },
+  {
+    "id": 54,
+    "src": "photos/photo-54.webp",
+    "category": "us",
+    "title": "Always my favourite company",
+    "note": "It could be any place. You would still make it special.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 34,
+    "src": "photos/photo-34.webp",
+    "category": "us",
+    "title": "Always my favourite company",
+    "note": "It could be any place. You would still make it special.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 18,
+    "src": "photos/photo-18.webp",
+    "category": "us",
+    "title": "Another beautiful memory",
+    "note": "Every little moment becomes brighter with you.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 58,
+    "src": "photos/photo-58.webp",
+    "category": "us",
+    "title": "Another beautiful memory",
+    "note": "Every little moment becomes brighter with you.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 27,
+    "src": "photos/photo-27.webp",
+    "category": "her",
+    "title": "Beautiful, just being you",
+    "note": "There is something so lovely about the way you are.",
+    "alt": "Portrait of her"
+  },
+  {
+    "id": 36,
+    "src": "photos/photo-36.webp",
+    "category": "us",
+    "title": "The two of us",
+    "note": "Just one more picture I will never get tired of.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 17,
+    "src": "photos/photo-17.webp",
+    "category": "us",
+    "title": "A page from our story",
+    "note": "Some photographs feel like little love letters.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 61,
+    "src": "photos/photo-61.webp",
+    "category": "us",
+    "title": "Look at us",
+    "note": "One little frame, a hundred reasons to smile.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 6,
+    "src": "photos/photo-06.webp",
+    "category": "us",
+    "title": "The two of us",
+    "note": "Just one more picture I will never get tired of.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 20,
+    "src": "photos/photo-20.webp",
+    "category": "throwback",
+    "title": "A little piece of you",
+    "note": "I love getting to know all the chapters that made you who you are.",
+    "alt": "A childhood photograph"
+  },
+  {
+    "id": 8,
+    "src": "photos/photo-08.webp",
+    "category": "us",
+    "title": "Another beautiful memory",
+    "note": "Every little moment becomes brighter with you.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 19,
+    "src": "photos/photo-19.webp",
+    "category": "throwback",
+    "title": "The cutest throwback",
+    "note": "A precious little picture from before our paths crossed.",
+    "alt": "A childhood photograph"
+  },
+  {
+    "id": 31,
+    "src": "photos/photo-31.webp",
+    "category": "us",
+    "title": "Look at us",
+    "note": "One little frame, a hundred reasons to smile.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 23,
+    "src": "photos/photo-23.webp",
+    "category": "throwback",
+    "title": "A little piece of you",
+    "note": "I love getting to know all the chapters that made you who you are.",
+    "alt": "A childhood photograph"
+  },
+  {
+    "id": 65,
+    "src": "photos/photo-65.webp",
+    "category": "us",
+    "title": "This little smile",
+    "note": "I keep these moments close to my heart.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 62,
+    "src": "photos/photo-62.webp",
+    "category": "us",
+    "title": "The way we are",
+    "note": "No perfect pose needed. Just us.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 16,
+    "src": "photos/photo-16.webp",
+    "category": "us",
+    "title": "The two of us",
+    "note": "Just one more picture I will never get tired of.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 38,
+    "src": "photos/photo-38.webp",
+    "category": "details",
+    "title": "Little things, big feelings",
+    "note": "A detail worth remembering, just because it belongs to our story.",
+    "alt": "A sweet personal memory"
+  },
+  {
+    "id": 51,
+    "src": "photos/photo-51.webp",
+    "category": "throwback",
+    "title": "Little you, big magic",
+    "note": "A tiny glimpse of the lovely person you were growing into.",
+    "alt": "A childhood photograph"
+  },
+  {
+    "id": 14,
+    "src": "photos/photo-14.webp",
+    "category": "us",
+    "title": "Always my favourite company",
+    "note": "It could be any place. You would still make it special.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 5,
+    "src": "photos/photo-05.webp",
+    "category": "us",
+    "title": "This little smile",
+    "note": "I keep these moments close to my heart.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 10,
+    "src": "photos/photo-10.webp",
+    "category": "details",
+    "title": "Us, in another universe",
+    "note": "Even as little illustrated characters, I would still pick you.",
+    "alt": "A sweet personal memory"
+  },
+  {
+    "id": 44,
+    "src": "photos/photo-44.webp",
+    "category": "us",
+    "title": "Always my favourite company",
+    "note": "It could be any place. You would still make it special.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 13,
+    "src": "photos/photo-13.webp",
+    "category": "us",
+    "title": "Caught in a happy moment",
+    "note": "I love the simple happiness behind these pictures.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 9,
+    "src": "photos/photo-09.webp",
+    "category": "us",
+    "title": "The happiest little us",
+    "note": "I wish I could bottle how this moment felt.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 43,
+    "src": "photos/photo-43.webp",
+    "category": "us",
+    "title": "Caught in a happy moment",
+    "note": "I love the simple happiness behind these pictures.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 49,
+    "src": "photos/photo-49.webp",
+    "category": "throwback",
+    "title": "The cutest throwback",
+    "note": "A precious little picture from before our paths crossed.",
+    "alt": "A childhood photograph"
+  },
+  {
+    "id": 59,
+    "src": "photos/photo-59.webp",
+    "category": "us",
+    "title": "The happiest little us",
+    "note": "I wish I could bottle how this moment felt.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 57,
+    "src": "photos/photo-57.webp",
+    "category": "us",
+    "title": "A page from our story",
+    "note": "Some photographs feel like little love letters.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 25,
+    "src": "photos/photo-25.webp",
+    "category": "throwback",
+    "title": "The cutest throwback",
+    "note": "A precious little picture from before our paths crossed.",
+    "alt": "A childhood photograph"
+  },
+  {
+    "id": 22,
+    "src": "photos/photo-22.webp",
+    "category": "throwback",
+    "title": "The cutest throwback",
+    "note": "A precious little picture from before our paths crossed.",
+    "alt": "A childhood photograph"
+  },
+  {
+    "id": 37,
+    "src": "photos/photo-37.webp",
+    "category": "us",
+    "title": "A page from our story",
+    "note": "Some photographs feel like little love letters.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 24,
+    "src": "photos/photo-24.webp",
+    "category": "throwback",
+    "title": "Little you, big magic",
+    "note": "A tiny glimpse of the lovely person you were growing into.",
+    "alt": "A childhood photograph"
+  },
+  {
+    "id": 30,
+    "src": "photos/photo-30.webp",
+    "category": "her",
+    "title": "A little bit of sunshine",
+    "note": "Some photos don’t need a caption. They just make me smile.",
+    "alt": "Portrait of her"
+  },
+  {
+    "id": 55,
+    "src": "photos/photo-55.webp",
+    "category": "us",
+    "title": "This little smile",
+    "note": "I keep these moments close to my heart.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 45,
+    "src": "photos/photo-45.webp",
+    "category": "details",
+    "title": "Our kind of magic",
+    "note": "The sweetest memories hide in the smallest things.",
+    "alt": "A sweet personal memory"
+  },
+  {
+    "id": 52,
+    "src": "photos/photo-52.webp",
+    "category": "throwback",
+    "title": "The cutest throwback",
+    "note": "A precious little picture from before our paths crossed.",
+    "alt": "A childhood photograph"
+  },
+  {
+    "id": 11,
+    "src": "photos/photo-11.webp",
+    "category": "us",
+    "title": "Look at us",
+    "note": "One little frame, a hundred reasons to smile.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 66,
+    "src": "photos/photo-66.webp",
+    "category": "us",
+    "title": "The two of us",
+    "note": "Just one more picture I will never get tired of.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 29,
+    "src": "photos/photo-29.webp",
+    "category": "her",
+    "title": "My favourite smile",
+    "note": "You might not realise it, but your smile makes my world brighter.",
+    "alt": "Portrait of her"
+  },
+  {
+    "id": 47,
+    "src": "photos/photo-47.webp",
+    "category": "us",
+    "title": "A page from our story",
+    "note": "Some photographs feel like little love letters.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 2,
+    "src": "photos/photo-02.webp",
+    "category": "us",
+    "title": "The way we are",
+    "note": "No perfect pose needed. Just us.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 56,
+    "src": "photos/photo-56.webp",
+    "category": "us",
+    "title": "The two of us",
+    "note": "Just one more picture I will never get tired of.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 60,
+    "src": "photos/photo-60.webp",
+    "category": "us",
+    "title": "My favourite kind of view",
+    "note": "Anywhere feels a little more beautiful beside you.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 40,
+    "src": "photos/photo-40.webp",
+    "category": "her",
+    "title": "Her, in her own magic",
+    "note": "You have this way of making even a simple photograph feel special.",
+    "alt": "Portrait of her"
+  },
+  {
+    "id": 32,
+    "src": "photos/photo-32.webp",
+    "category": "us",
+    "title": "The way we are",
+    "note": "No perfect pose needed. Just us.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 28,
+    "src": "photos/photo-28.webp",
+    "category": "her",
+    "title": "Her, in her own magic",
+    "note": "You have this way of making even a simple photograph feel special.",
+    "alt": "Portrait of her"
+  },
+  {
+    "id": 50,
+    "src": "photos/photo-50.webp",
+    "category": "us",
+    "title": "My favourite kind of view",
+    "note": "Anywhere feels a little more beautiful beside you.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 3,
+    "src": "photos/photo-03.webp",
+    "category": "us",
+    "title": "Caught in a happy moment",
+    "note": "I love the simple happiness behind these pictures.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 4,
+    "src": "photos/photo-04.webp",
+    "category": "us",
+    "title": "Always my favourite company",
+    "note": "It could be any place. You would still make it special.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 46,
+    "src": "photos/photo-46.webp",
+    "category": "us",
+    "title": "The two of us",
+    "note": "Just one more picture I will never get tired of.",
+    "alt": "Photograph of us together"
+  },
+  {
+    "id": 21,
+    "src": "photos/photo-21.webp",
+    "category": "throwback",
+    "title": "Little you, big magic",
+    "note": "A tiny glimpse of the lovely person you were growing into.",
+    "alt": "A childhood photograph"
+  }
+];

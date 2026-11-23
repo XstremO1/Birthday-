@@ -1,14 +1,7 @@
-OUR LITTLE FOREVER ♡
-RANDOM MOMENTS EDITION — NO CALENDAR, NO DATES FOR PHOTOS
+OUR LITTLE FOREVER ♡ — PHOTO EDITION
 
-1. Extract ZIP.
-2. Replace the old index.html, styles.css, app.js and data.js on GitHub with the new ones.
-3. Also keep favicon.svg, little-stars.wav, .nojekyll in your GitHub repository root.
-4. GitHub Settings > Pages: deploy from branch main, root.
-5. Visit your Pages link and hard-refresh after the deployment.
-
-OPTIONAL PHOTOS: put photo-01.jpg, photo-02.jpg, ... photo-40.jpg under photos/.
-No dates or memory matching required. Photos work in random order.
-Do not just rename .png to .jpg — convert to JPEG first.
-
-For detailed help, read README.md.
+1. Open index.html locally for a quick look.
+2. Upload EVERY file and the photos folder contents to your GitHub repo root.
+3. Settings > Pages > Deploy from a branch > main > /(root).
+4. Use ?preview=1 to test the Dec 25 finale early.
+5. Note: publishing private photographs / copyrighted Darkhaast audio publicly may require consent/permission.

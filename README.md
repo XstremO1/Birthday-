@@ -1,49 +1,33 @@
-# OUR LITTLE FOREVER ♡ — Random Moments Edition
+# Our Little Forever ♡ — Personal Photo Edition
 
-A **no-calendar, no-date-labels**, photo-first romantic website. It works as ordinary static files on GitHub Pages, with no React, npm, or paid hosting.
+This is a **complete static website**. You do not need Node, React, npm, or any build command.
 
-## Publish on GitHub Pages
+## Publish to GitHub Pages
+1. Extract this ZIP.
+2. Upload **everything inside the folder** to the ROOT of your GitHub repository, keeping the `photos/` directory intact.
+3. In GitHub **Settings → Pages**, choose **Deploy from a branch** → `main` → `/ (root)` and save.
+4. After a successful Pages deployment, open `https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/`.
+5. If you previously uploaded a version, hard-refresh the page (Ctrl+Shift+R).
 
-1. Unzip this folder on your computer.
-2. Open your existing GitHub repository (`our-little-forever`, or whatever you named it).
-3. **Replace the old** `index.html`, `styles.css`, `app.js`, `data.js` with the same four files in this ZIP. Do not leave both old and new versions with different names.
-4. Keep `favicon.svg` and `little-stars.wav` in the root (upload the copies from this ZIP if missing).
-5. On GitHub: **Settings → Pages → Build and deployment → Deploy from a branch → main / (root) → Save**. If already configured, no change needed.
-6. After the Pages deployment finishes, refresh your website with Ctrl+Shift+R.
+**Files that must be next to `index.html`:** `styles.css`, `data.js`, `app.js`, `favicon.svg`, `little-stars.wav`, `our-darkhaast.mp3` and `photos/`.
 
-This version is **intentionally FLAT**: HTML, CSS, JS, and audio live directly in the repository root. It fixes the earlier styling issue caused by missing `assets/` folders.
+## Personal photographs
+- Reviewed all **67 numbered uploads** and the separate **Darkhaast dance** photograph.
+- Converted **7 HEIC photographs misnamed as JPG** into browser-compatible WebP.
+- A few uploads were exact duplicates: `photo 53` of `photo 9`, `photo 63` of `photo 31`, and `photo 67` of `photo 3`. Duplicates appear once in the public photo gallery, but every distinct image is included.
+- The album is **not arranged by date**. The first several frames are selected for visual storytelling, then the rest are mixed. Visitors can also shuffle or filter pictures.
+- Images were resized and metadata removed for faster page loading and to avoid including source EXIF metadata in the published site.
+- The separate dance photograph is displayed in the special birthday section, not the general gallery.
 
-## Add your own pictures (no dates or matching required)
+## December 25 finale
+- It opens on **December 25, 2026 at 12:00 AM India time** based on the visitor's clock.
+- For your own testing before then, open the page with `?preview=1` after the URL. Remove it before sharing.
+- After the candles are blown out, **your provided Darkhaast audio** and dance photograph are ready. Tap **Play our song & memories** for the music/photo sequence. The browser will not autoplay without a gesture.
 
-Photos are entirely optional; the site already displays illustrated placeholders. When you're ready:
+## Important privacy and music notes
+GitHub Pages and the repository contents may be **public**, and the date lock is only a presentation convenience, **not a secure way to protect unreleased photos/music**. Get permission from anyone whose photos you publish, especially childhood images. Consider a private hosting method with real access control if these are sensitive.
 
-1. Put any photos in the `photos` folder.
-2. Name them `photo-01.jpg`, `photo-02.jpg`, `photo-03.jpg`, ... up to `photo-40.jpg`. **The order is random; you do not need to know when or where they were taken.**
-3. For PNG, WEBP, or HEIC files: convert them into JPG with an image converter **before** naming them `.jpg` (merely changing the filename extension does NOT convert an image). Or send the originals in a ZIP and ask me to integrate them.
-4. Upload the `photos` folder and its contents to GitHub. To create the folder in GitHub's web interface, open the existing `photos/README.md` file (included here), navigate to its folder, and choose **Add file → Upload files**. Photos must end up at `photos/photo-01.jpg`, etc., not in the root.
-5. Reload the website after the deployment. Every available photo automatically appears. Missing photos show pretty placeholder artwork; never a broken-image icon.
+The uploaded Darkhaast recording is from a commercially released song. You may need permission or a valid licence to publish it on a public site, and GitHub or rights holders may restrict/remove it. As a copyright-safe alternative, replace `our-darkhaast.mp3` with music you own or have permission to publish; or keep it off the public site and play it privately.
 
-**TIP:** If you upload your original photos as a ZIP in ChatGPT, I can rename, optimise and add them into the ready-to-upload folder for you—no need to rename 22+ files yourself.
-
-## Song
-
-`little-stars.wav` is the included *original* gentle instrumental. To use the song you danced to, send the MP3. With permission to publish it, add it as `our-song.mp3` in the repository root. The birthday audio player tries `our-song.mp3` first and falls back to `little-stars.wav` when it is absent. In the meantime, the site does **not** claim to contain Darkhaast.
-
-## Birthday
-
-All random click-surprises and photographs are accessible all the time. **Only** the birthday finale unlocks from **December 25, 2026 in Asia/Kolkata time**. No dates are displayed as photo captions or story labels. To privately test the finale, append `?preview=1` to the website URL; remove it when you share the link. This is a visual lock only, not a secure private storage mechanism.
-
-## Important privacy note
-
-Public GitHub repositories and GitHub Pages host files publicly. Please only upload photos and audio that you both are comfortable publishing. A website link is not a privacy mechanism; anyone with access could view or save the photographs.
-
-## Files
-
-- `index.html` — website
-- `styles.css` — design and 3D-style effects
-- `app.js` — cards, games, gallery, saving progress, finale
-- `data.js` — undated romantic messages and card captions
-- `photos/` — optional images
-- `little-stars.wav` — original background audio
-- `favicon.svg` — icon
-- `.nojekyll` — GitHub Pages helper
+## Changing copy
+You can edit letters and surprise messages in `data.js` and the main headings in `index.html`.

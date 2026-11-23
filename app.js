@@ -146,48 +146,80 @@
     }
   }
 
-  const photos = new Map();
-  const photoCardById=new Map();
-  const placeholderIcons=['💗','🌸','✨','🫂','☁️','🌷','🍦','💌','🦋','🎀','🌙','♡'];
-  function makePhotoCard(i){
-    const cap=site.captions[(i-1)%site.captions.length];
-    const b=btn('',()=>openPhoto(i),'photo-card');b.dataset.photo=String(i);
-    const photoSlot=node('span','photo-picture');photoSlot.appendChild(node('span','photo-icon',cap[2]||placeholderIcons[(i-1)%12]));
-    const name=node('span','photo-caption');name.appendChild(node('strong','',cap[0]));name.appendChild(node('small','','tap to remember ♡'));
-    b.append(photoSlot,name);photoCardById.set(i,b);return b;
-  }
-  function applyPhoto(i,src){
-    const b=photoCardById.get(i);if(!b)return;
-    const slot=$('.photo-picture',b);slot.replaceChildren();const img=node('img');img.src=src;img.alt='Our favourite photograph';img.loading='lazy';slot.appendChild(img);
-    b.classList.add('with-photo');
+  // Hand-picked images placed in a deliberately non-chronological order.
+  const album=Array.isArray(window.LOVE_PHOTOS) ? window.LOVE_PHOTOS : [];
+  const byPhotoId=new Map(album.map(p=>[p.id,p]));
+  let albumOrder=[...album];
+  let photoFilter='all';
+  const getVisiblePhotos=()=>albumOrder.filter(p=>photoFilter==='all'||p.category===photoFilter);
+  function makePhotoCard(photo){
+    const b=btn('',()=>openPhoto(photo.id),'photo-card with-photo');
+    b.dataset.photo=String(photo.id);
+    const slot=node('span','photo-picture');
+    const img=node('img');img.src=photo.src;img.alt=photo.alt;img.loading='lazy';img.decoding='async';
+    slot.appendChild(img);
+    const name=node('span','photo-caption');name.appendChild(node('strong','',photo.title));name.appendChild(node('small','','tap to remember ♡'));
+    b.append(slot,name);
+    return b;
   }
   function renderPhotos(){
-    const grid=$('#photoGrid');
-    const firstTwelve=shuffled(Array.from({length:12},(_,i)=>i+1));
-    firstTwelve.forEach(i=>grid.appendChild(makePhotoCard(i)));
-    for(let i=1;i<=40;i++){
-      const src='photos/photo-'+String(i).padStart(2,'0')+'.jpg';
-      const image=new Image();
-      image.onload=()=>{
-        photos.set(i,src);
-        if(!photoCardById.has(i))grid.appendChild(makePhotoCard(i));
-        applyPhoto(i,src);
-      };
-      image.onerror=()=>{};
-      image.src=src;
-    }
+    const visible=getVisiblePhotos();
+    $('#photoGrid').replaceChildren(...visible.map(makePhotoCard));
+    $('#photoCount').textContent=`${visible.length} ${visible.length===1?'little picture':'little pictures'} to explore`;
+    $$('#photoFilters .photo-filter').forEach(b=>{const active=b.dataset.filter===photoFilter;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
   }
   function openPhoto(i){
-    lastPhoto=i;const cap=site.captions[(i-1)%site.captions.length];const content=$('#photoContent');content.replaceChildren();
-    const frame=node('div','lightbox-frame');
-    if(photos.has(i)){
-      const img=node('img');img.src=photos.get(i);img.alt='Our favourite photograph';frame.appendChild(img);
-    }else{
-      frame.classList.add('empty');frame.appendChild(node('span','lightbox-placeholder',cap[2]||'💗'));
-    }
-    content.append(frame,node('span','modal-eyebrow','OUR LITTLE FOREVER'),node('h2','lightbox-title',cap[0]),node('p','lightbox-note',cap[1]));
-    const next=btn('Show another random photo ↻',()=>{const list=photos.size?[...photos.keys()]:[...photoCardById.keys()];const choices=list.filter(n=>n!==lastPhoto);openPhoto(choices[Math.floor(Math.random()*choices.length)]||list[0]);},'button button-quiet');content.appendChild(next);
+    const photo=byPhotoId.get(i);if(!photo)return;
+    lastPhoto=i;
+    const content=$('#photoContent');content.replaceChildren();
+    const frame=node('div','lightbox-frame');const img=node('img');img.src=photo.src;img.alt=photo.alt;frame.appendChild(img);
+    content.append(frame,node('span','modal-eyebrow','OUR LITTLE FOREVER'),node('h2','lightbox-title',photo.title),node('p','lightbox-note',photo.note));
+    const list=albumOrder;
+    const actions=node('div','photo-lightbox-actions');
+    actions.appendChild(btn('← Previous',()=>{const j=list.findIndex(x=>x.id===lastPhoto);openPhoto(list[(j-1+list.length)%list.length].id);},'button button-quiet'));
+    actions.appendChild(btn('Surprise me ✦',()=>{const choices=list.filter(x=>x.id!==lastPhoto);openPhoto(choices[Math.floor(Math.random()*choices.length)].id);},'button button-primary'));
+    actions.appendChild(btn('Next →',()=>{const j=list.findIndex(x=>x.id===lastPhoto);openPhoto(list[(j+1)%list.length].id);},'button button-quiet'));
+    content.appendChild(actions);
     setDialog($('#photoDialog'),$('#photoClose'));
+  }
+  function setupPhotoActions(){
+    $('#shufflePhotos').addEventListener('click',()=>{albumOrder=shuffled(albumOrder);renderPhotos();say('Our pictures, in a brand new little order ♡');});
+    $$('#photoFilters .photo-filter').forEach(b=>b.addEventListener('click',()=>{photoFilter=b.dataset.filter;renderPhotos();}));
+  }
+  // The user's supplied dance photograph and music stay inside the birthday reveal.
+  const dancePlaylist=[42,64,15,7,33,39,1,34,12,54,37,50,11,18,2,31,57,46,8,4,65].map(id=>byPhotoId.get(id)).filter(Boolean);
+  let danceIndex=0;
+  let danceTimer=null;
+  function showDanceFrame(index){
+    if(!dancePlaylist.length)return;
+    danceIndex=(index+dancePlaylist.length)%dancePlaylist.length;
+    const p=dancePlaylist[danceIndex];
+    $('#danceSlideImage').src=p.src;
+    $('#danceSlideImage').alt=p.alt;
+    $('#danceSlideCaption').textContent=p.note;
+  }
+  function stopDanceTimer(){clearInterval(danceTimer);danceTimer=null;}
+  function startDanceTimer(){
+    stopDanceTimer();
+    danceTimer=setInterval(()=>{if(!$('#birthdayAudio').paused)showDanceFrame(danceIndex+1);},4300);
+  }
+  function setupDance(){
+    const audio=$('#birthdayAudio');
+    const playlist=$('#danceSlideshow');
+    const start=async()=>{
+      playlist.hidden=false;showDanceFrame(danceIndex);
+      const ambient=$('#ambientAudio');if(!ambient.paused){ambient.pause();$('#musicText').textContent='music off';$('#musicButton').setAttribute('aria-pressed','false');}
+      try{await audio.play();startDanceTimer();$('#playDance').textContent='♫ Playing our song';}
+      catch(_){say('Tap the audio play control to hear our song.');}
+      playlist.scrollIntoView({block:'nearest',behavior:isReduced?'auto':'smooth'});
+    };
+    $('#playDance').addEventListener('click',()=>{if(audio.paused)start();else{audio.pause();$('#playDance').textContent='▶ Continue our song';}});
+    audio.addEventListener('play',()=>{playlist.hidden=false;startDanceTimer();$('#playDance').textContent='♫ Playing our song';});
+    audio.addEventListener('pause',()=>{stopDanceTimer();$('#playDance').textContent='▶ Continue our song';});
+    audio.addEventListener('ended',()=>{stopDanceTimer();$('#playDance').textContent='↻ Dance again';});
+    $('#dancePrev').addEventListener('click',()=>showDanceFrame(danceIndex-1));
+    $('#danceNext').addEventListener('click',()=>showDanceFrame(danceIndex+1));
+    showDanceFrame(0);
   }
   function birthdayIsReady(){
     if(new URLSearchParams(location.search).get('preview')==='1')return true;
@@ -205,12 +237,8 @@
       $('#birthdayExperience').hidden=false;button.hidden=true;$('#birthdayStatus').textContent='';startCandles();
       $('#birthdayExperience').scrollIntoView({block:'nearest',behavior:isReduced?'instant':'smooth'});
     });
-    $('#birthdayAgain').addEventListener('click',()=>{const audio=$('#birthdayAudio');audio.pause();audio.currentTime=0;startCandles();});
-    $('#birthdayAudio').addEventListener('loadedmetadata',()=>{
-      const url=$('#birthdayAudio').currentSrc||'';
-      if(url.includes('our-song.mp3'))$('#songCaption').textContent='Our very special song ♡';
-      else $('#songCaption').textContent='A gentle original instrumental for this little moment';
-    });
+    $('#birthdayAgain').addEventListener('click',()=>{const audio=$('#birthdayAudio');audio.pause();audio.currentTime=0;stopDanceTimer();$('#danceSlideshow').hidden=true;$('#playDance').textContent='▶ Play our song & memories';startCandles();});
+
   }
   function startCandles(){
     $('#birthdayReveal').hidden=true;const row=$('#candles');row.replaceChildren();let n=0;$('#candleInstruction').textContent='Tap the five glowing candles and make a wish ♡';
@@ -230,11 +258,11 @@
     });
   }
   function init(){
-    createStars();renderSurprises();renderPhotos();birthdayInit();backgroundMusic();
+    createStars();renderSurprises();renderPhotos();setupPhotoActions();birthdayInit();backgroundMusic();setupDance();
     const letter=$('#letterText');site.letter.forEach(text=>letter.appendChild(node('p','',text)));
     $('#shuffleMoments').addEventListener('click',()=>{renderSurprises();say('A fresh little shuffle, just for you ♡');});
     $('#randomPick').addEventListener('click',()=>{const list=site.surprises.filter(s=>s.id!==lastMoment?.id);openSurprise(list[Math.floor(Math.random()*list.length)]||site.surprises[0]);});
-    $('#randomPhoto').addEventListener('click',()=>{const list=photos.size?[...photos.keys()]:[...photoCardById.keys()];openPhoto(list[Math.floor(Math.random()*list.length)]);});
+    $('#randomPhoto').addEventListener('click',()=>{const list=getVisiblePhotos();if(list.length)openPhoto(list[Math.floor(Math.random()*list.length)].id);});
     $('#surpriseClose').addEventListener('click',()=>$('#surpriseDialog').close());
     $('#photoClose').addEventListener('click',()=>$('#photoDialog').close());
     [$('#surpriseDialog'),$('#photoDialog')].forEach(dialog=>dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();}));
