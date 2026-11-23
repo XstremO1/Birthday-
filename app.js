@@ -2,7 +2,7 @@
   'use strict';
   const site = window.LOVE_SITE;
   if (!site || !Array.isArray(site.days) || site.days.length !== 31) {
-    document.body.insertAdjacentHTML('afterbegin','<p style="color:white;padding:24px">The story data is unavailable. Please check assets/data.js.</p>');
+    document.body.insertAdjacentHTML('afterbegin','<p style="color:white;padding:24px">The story data is unavailable. Please check data.js.</p>');
     return;
   }
   const $ = (selector, parent = document) => parent.querySelector(selector);
@@ -152,7 +152,7 @@
     if(i===30){
       const div=el('div','finale-dance');div.innerHTML='<span class="dance-icon">♡</span>One dance, a thousand feelings.<br /><small>Remember our happy dance to Darkhaast?</small>';
       box.appendChild(div);
-      const audioArea=el('div');audioArea.innerHTML='<p class="finale-audio-note">Enjoy this original little instrumental. You can replace the music with your own licensed track if you wish.</p><audio controls class="finale-audio" preload="none"><source src="audio/little-stars.wav" type="audio/wav">Audio playback is not supported.</audio>';
+      const audioArea=el('div');audioArea.innerHTML='<p class="finale-audio-note">Enjoy this original little instrumental. You can replace the music with your own licensed track if you wish.</p><audio controls class="finale-audio" preload="none"><source src="little-stars.wav" type="audio/wav">Audio playback is not supported.</audio>';
       const audio=$('audio',audioArea);audio.addEventListener('error',()=>{audioArea.remove();});
       box.appendChild(audioArea);
     }
