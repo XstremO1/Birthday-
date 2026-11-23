@@ -1,0 +1,29 @@
+OUR LITTLE FOREVER ♡
+====================
+
+YOUR WEBSITE IS READY.
+
+1. Unzip the downloaded folder.
+2. Open index.html to see the website.
+3. On GitHub, create a new public repository named our-little-forever.
+4. Upload EVERYTHING INSIDE this folder, with index.html at the repository root.
+5. Open GitHub repository → Settings → Pages.
+6. Choose Deploy from a branch → main → /(root), then Save.
+7. Share the GitHub Pages website link.
+
+The calendar runs November 25 – December 25, 2026 (India time).
+
+LOCAL PREVIEW OF ALL DAYS:
+- From this folder run: python -m http.server 8000
+- Open: http://localhost:8000/?preview=1
+- The preview shortcut is disabled on GitHub Pages.
+
+Want to include real photos? See photos/README.md.
+Want to customise messages? Edit assets/data.js.
+Need help? Read README.md.
+
+IMPORTANT: GitHub Pages is public. Never upload private photographs or confidential messages unless you are comfortable with others being able to access them. Date unlocks are for the experience, not cryptographic access control.
+
+The 16 December mangalsutra memory is explicitly described as a symbolic, private, five-minute moment and birthday gift—not a real wedding.
+
+Made with love. ♡

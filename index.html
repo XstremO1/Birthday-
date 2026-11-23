@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d1020" />
+  <meta name="description" content="Thirty-one little surprises. A whole universe of memories. One very special birthday." />
+  <meta property="og:title" content="Our Little Forever ✨" />
+  <meta property="og:description" content="A little world made for one very special person. One surprise every day." />
+  <title>Our Little Forever ♡</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="assets/data.js"></script>
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <div class="background-glow" aria-hidden="true"></div>
+  <div class="starfield" aria-hidden="true" id="starfield"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Our Little Forever, home"><span class="brand-mark">♡</span><span>our little <i>forever.</i></span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#calendar">The 31 days</a><a href="#story">Our story</a><a href="#garden">The stars</a><a href="#letter">A letter</a>
+    </nav>
+    <button class="music-button" id="musicButton" type="button" aria-pressed="false" title="Turn gentle background music on or off"><span id="musicIcon">♫</span><span id="musicText">music off</span></button>
+  </header>
+
+  <main>
+    <section id="home" class="hero section-wrap" aria-labelledby="heroTitle">
+      <div class="hero-text">
+        <div class="eyebrow"><span class="eyebrow-star">✦</span> A LITTLE UNIVERSE, JUST FOR YOU <span class="eyebrow-star">✦</span></div>
+        <p class="hero-pretitle">To the girl who makes ordinary days extraordinary</p>
+        <h1 id="heroTitle">Some stories feel <em>like forever.</em></h1>
+        <p class="hero-description">Ours began with a packet of chips. And somehow, one tiny moment turned into a thousand memories I never want to forget.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#calendar">Open your surprises <span aria-hidden="true">↗</span></a><a class="button button-quiet" href="#story">See our story <span aria-hidden="true">→</span></a></div>
+        <div class="hero-caption"><span class="tiny-heart">♥</span> 25 NOV — 25 DEC 2026 <span class="dot-sep">·</span> ONE NEW SURPRISE EACH DAY</div>
+      </div>
+      <div class="hero-art" aria-label="A magical moonlit world with floating memory cards">
+        <div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><div class="orbit orbit-3"></div>
+        <div class="hero-moon"><span class="moon-sheen"></span><span class="moon-glow"></span></div>
+        <div class="hero-heart">♡</div>
+        <div class="floating-card floating-card-one" tabindex="0"><span class="floating-sparkle">✦</span><span class="float-label">25 AUG</span><strong>our first chips date</strong><span class="float-illustration">🍟</span></div>
+        <div class="floating-card floating-card-two" tabindex="0"><span class="float-label">17 NOV</span><strong>our first hug</strong><span class="float-illustration">🫂</span></div>
+        <div class="floating-card floating-card-three" tabindex="0"><span class="float-label">25 DEC</span><strong>your special day</strong><span class="float-illustration">🎂</span></div>
+        <div class="orbit-dot dot-a"></div><div class="orbit-dot dot-b"></div><div class="orbit-dot dot-c"></div>
+        <span class="hero-floater star-a">✧</span><span class="hero-floater star-b">✺</span><span class="hero-floater star-c">✦</span>
+      </div>
+      <div class="hero-bottom"><div class="mini-badge"><span class="mini-badge-icon">✧</span><span><strong>31</strong> little reasons to smile</span></div><div class="mini-badge"><span class="mini-badge-icon">♡</span><span><strong>1</strong> very special person</span></div><div class="mini-badge"><span class="mini-badge-icon">∞</span><span><strong>∞</strong> memories still to make</span></div></div>
+    </section>
+
+    <section class="intro-strip section-wrap" aria-label="Introduction"><div class="intro-ornament">❦</div><p>“Your birthday is still a month away. But why should someone as special as you be celebrated for only one day?”</p><span>— a little note from me to you</span></section>
+
+    <section id="calendar" class="calendar-section section-wrap" aria-labelledby="calendarHeading">
+      <div class="section-topline"><span class="section-count">01 / THE ADVENT</span><span class="section-decoration">✦ &nbsp; ✧ &nbsp; ✦</span></div>
+      <div class="section-header"><div><p class="section-eyebrow">ONE DAY AT A TIME</p><h2 id="calendarHeading">A gift for <em>every day.</em></h2><p class="section-description">Thirty-one tiny adventures, each carrying a little piece of our story. One new gift opens every midnight in India.</p></div><div class="countdown-card"><span id="countdownLabel">UNTIL THE FIRST GIFT</span><strong id="countdownNumber">—</strong><small id="countdownUnit">days to go</small></div></div>
+      <div class="calendar-frame"><div class="calendar-bar"><div><span class="status-sparkle">✦</span><strong id="calendarHeadline">Your journey begins soon</strong><span id="calendarHint">The first surprise opens November 25.</span></div><div class="progress-label"><strong id="collectedCount">0 / 31</strong><span>memories collected</span></div></div><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><div class="month-headings"><span>NOVEMBER <i>25—30</i></span><span>DECEMBER <i>01—25</i></span></div><div id="calendarGrid" class="calendar-grid" aria-label="31 daily birthday surprises"></div><div class="calendar-footer"><span>✧</span><p>Missed a day? Don't worry. Past gifts stay open. Your story will always be here.</p><span>✧</span></div></div>
+    </section>
+
+    <section id="story" class="story-section section-wrap" aria-labelledby="storyHeading"><div class="section-topline"><span class="section-count">02 / THE MEMORY MUSEUM</span><span class="section-decoration">❦ &nbsp; ✦ &nbsp; ❦</span></div><div class="section-header story-head"><div><p class="section-eyebrow">OUR FAVOURITE LITTLE THINGS</p><h2 id="storyHeading">A thousand little moments.<br /><em>One beautiful story.</em></h2><p class="section-description">It was never just about the places we went. It was about having you there.</p></div><div class="story-stamp">EST. <strong>31 AUG</strong><span>THE DAY WE BECAME US</span></div></div><div id="storyTabs" class="story-tabs" role="tablist" aria-label="Memory chapters"></div><div id="storyContent" class="story-content"></div></section>
+
+    <section id="garden" class="garden-section" aria-labelledby="gardenHeading"><div class="section-wrap"><div class="section-topline"><span class="section-count">03 / THE MEMORY CONSTELLATION</span><span class="section-decoration">✦ &nbsp; ✧ &nbsp; ✦</span></div><div class="section-header"><div><p class="section-eyebrow">EVERY MEMORY LEAVES A LITTLE LIGHT</p><h2 id="gardenHeading">Our own little <em>universe.</em></h2><p class="section-description">Every surprise you complete becomes a star. Watch our sky grow brighter, one day at a time.</p></div><div class="star-total"><span>STARS YOU'VE FOUND</span><strong id="starTotal">00</strong><span>OUT OF 31</span></div></div><div class="cosmos-panel"><div id="constellation" class="constellation" aria-label="A sky filled with the stars you have collected"></div><div class="cosmos-overlay"><span class="cosmos-label">THE LITTLE THINGS MAKE THE BIGGEST UNIVERSE</span><h3>Every star holds <em>a story.</em></h3><p id="cosmosCaption">Your constellation is waiting for its first light.</p></div></div><div id="starChips" class="star-chips"></div></div></section>
+
+    <section id="letter" class="letter-section section-wrap" aria-labelledby="letterHeading"><div class="section-topline"><span class="section-count">04 / A NOTE FROM MY HEART</span><span class="section-decoration">♡ &nbsp; ♡ &nbsp; ♡</span></div><div class="letter-layout"><div class="letter-intro"><p class="section-eyebrow">A FEW WORDS, JUST FOR YOU</p><h2 id="letterHeading">If I could keep<br />one thing <em>forever…</em></h2><p>It would be the feeling of making another beautiful memory with you.</p><div class="letter-seal">with all my love <span>♡</span></div></div><div class="letter-paper"><div class="letter-pin">✦</div><p class="letter-salutation">My favourite person,</p><div id="letterText"></div><div class="letter-signoff">Forever cheering for you,<br /><strong>your favourite person ♡</strong></div></div></div></section>
+
+    <section class="closing-section section-wrap"><span class="closing-star">✦</span><h2>And the best part?<br /><em>Our story isn't finished.</em></h2><p>There are so many tiny adventures still waiting for us.</p><a class="button button-primary" href="#calendar">Find your next little surprise <span aria-hidden="true">↑</span></a><div class="closing-flourish">♡ &nbsp; ✧ &nbsp; ♡</div></section>
+  </main>
+  <footer><span>made with a ridiculous amount of love ♡</span><span>our little forever · 2026</span></footer>
+  <nav class="bottom-nav" aria-label="Mobile navigation"><a href="#home"><span>✧</span>Home</a><a href="#calendar"><span>🎁</span>Gifts</a><a href="#story"><span>♡</span>Story</a><a href="#garden"><span>✦</span>Stars</a></nav>
+
+  <div class="dialog-backdrop" id="giftDialog" hidden>
+    <div class="gift-dialog" role="dialog" aria-modal="true" aria-labelledby="giftTitle" tabindex="-1">
+      <button type="button" id="dialogClose" class="dialog-close" aria-label="Close surprise">✕</button>
+      <div id="dialogContents"></div>
+    </div>
+  </div>
+  <script>/* This empty script intentionally supports static-site preview without a build step. */</script>
+</body>
+</html>
